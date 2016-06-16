@@ -737,6 +737,12 @@
                     openConfirm: function (opts) {
                         var defer = $q.defer();
                         var options = angular.copy(defaults);
+                        
+                        // override defaults to stop closing which can be overridden by opts
+                        options = {
+ -                          closeByEscape: false,
+ -                          closeByDocument: false
+ -                      };
 
                         opts = opts || {};
 
